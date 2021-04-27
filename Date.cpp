@@ -56,8 +56,19 @@ Date::Date(size_t days, size_t months, size_t years) : Date(){
         month = months;
         year = years;
     }
-    std::cout << "Nice, you can't enter a correct date...\n";
-};
+    else std::cout << "Nice, you can't enter a correct date...\n";
+}
+Date& Date::operator=(const Date& other)
+{
+    if (this != &other)
+    {
+        day = other.day;
+        month = other.month;
+        year = other.year;
+    }
+    return *this;
+}
+;
 
 size_t Date::getDays() const
 {
@@ -92,4 +103,10 @@ void Date::setYears(size_t years)
 void Date::print() const
 {
     std::cout << day << "." << month << "." << year << "\n";
+}
+
+std::ostream& operator<<(std::ostream& out, const Date& current)
+{
+    out << current.day << "." << current.month << "." << current.year << "\n";
+    return out;
 }

@@ -12,6 +12,8 @@ class Date
 public:
 	Date();
 	Date(size_t days, size_t months, size_t years);
+	Date& operator=(const Date& other);
+	friend std::ostream& operator<<(std::ostream& out, const Date& current);
 
 	size_t getDays() const;
 	size_t getMonths() const;

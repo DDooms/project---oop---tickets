@@ -66,6 +66,14 @@ public:
 		}
 		return *this;
 	}
+	bool operator==(const Vector<T>& other) {
+		for (size_t i = 0; i < size; i++)
+		{
+			if (vector[i] == other.vector[i])
+				return true;
+		}
+		return false;
+	}
 	void print() const {
 		for (size_t i = 0; i < size; i++)
 		{

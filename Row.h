@@ -17,4 +17,7 @@ public:
 	size_t getSize() const {
 		return seats.getSize();
 	}
+	Seat& operator[](size_t index) const {
+		return seats[index];
+	}
 };

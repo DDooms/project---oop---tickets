@@ -42,7 +42,7 @@ public:
 	size_t getCap() const {
 		return capacity;
 	}
-	const T& operator[](size_t index) const {
+	T& operator[](size_t index) const {
 		return vector[index];
 	}
 	void PopBack() {

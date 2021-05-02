@@ -61,6 +61,16 @@ bool Date::operator==(const Date& other) const
     return day == other.day && month == other.month && year == other.year;
 }
 
+bool Date::operator<=(const Date& other) const
+{
+    return day <= other.day && month <= other.month && year <= other.year;
+}
+
+bool Date::operator>=(const Date& other) const
+{
+    return day >= other.day && month >= other.month && year >= other.year;
+}
+
 size_t Date::getDays() const
 {
     return day;

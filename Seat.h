@@ -49,4 +49,9 @@ public:
 	size_t getTicketNum() const {
 		return ticketNum;
 	}
+	bool isBoughtInDateInterval(const Date& dateFrom, const Date& dateTo) const {
+		return buyingDate >= dateFrom && buyingDate <= dateTo;
+
+	}
+
 };

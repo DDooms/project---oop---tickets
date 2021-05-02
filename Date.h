@@ -13,6 +13,8 @@ public:
 	Date& operator=(const Date& other);
 	friend std::ostream& operator<<(std::ostream& out, const Date& current);
 	bool operator==(const Date& other) const;
+	bool operator<=(const Date& other) const;
+	bool operator>=(const Date& other) const;
 
 	size_t getDays() const;
 	size_t getMonths() const;

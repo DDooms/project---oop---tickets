@@ -1,5 +1,4 @@
 #pragma once
-#include "Seat.h"
 #include "String.h"
 #include "Row.h"
 #include "Vector.h"
@@ -21,6 +20,9 @@ public:
 	String getName() const {
 		return name;
 	}
+	size_t getHallNum() const {
+		return hallNum;
+	}
 	size_t getColNumber() const {
 		return rows[0].getSize();
 	}
@@ -38,6 +40,7 @@ public:
 					counter++;
 			}
 		}
+		return 0;
 	}
 	size_t getSeatNum(size_t number) {
 		size_t size = rows.getSize();
@@ -60,7 +63,7 @@ public:
 		return date;
 	}
 	bool isValid(size_t rowNumber, size_t seatNumber) const {
-		return 0 <= rowNumber && rowNumber < rows.getSize() && 0 <= seatNumber && seatNumber < getColNumber();
+		return rowNumber > 0 && rowNumber < rows.getSize() && seatNumber > 0 && seatNumber < getColNumber();
 	}
 	bool isBooked(size_t rowNumber, size_t seatNumber) const {
 		return rows[rowNumber][seatNumber].isBooked();
@@ -90,6 +93,17 @@ public:
 			{
 				if (rows[i][j].isBooked() && !rows[i][j].isBought())
 					counter++;
+			}
+		}
+		return counter;
+	}
+	size_t getBoughtSeatsOnDateInterval(const Date& dateFrom, const Date& dateTo) const {
+		int counter = 0;
+		for (int i = 0; i < rows.getSize(); ++i) {
+			for (int j = 0; j < rows[i].getSize(); ++j) {
+				if (rows[i][j].isBought(dateFrom, dateTo)) {
+					++counter;
+				}
 			}
 		}
 		return counter;

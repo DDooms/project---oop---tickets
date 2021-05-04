@@ -76,43 +76,6 @@ public:
 				std::cout << events[i].getName() << ", " << events[i].getDate() << ": "
 					<< events[i].getBookedButNotBoughtSeats() << std::endl;
 			}
-		/*else {
-			string temporary;
-			cin >> temporary;
-
-			if (cin.peek() == '\n') {
-				if (isDate(temporary)) {
-					for (int i = 0; i < events.size(); ++i) {
-						if (events[i].get_date() == temporary) {
-							cout << events[i].get_event_name() << ": "
-								<< events[i].get_booked_seats_which_are_not_bought() << endl;
-						}
-					}
-				}
-				else {
-					for (int i = 0; i < events.size(); ++i) {
-						if (events[i].get_event_name() == temporary) {
-							cout << events[i].get_date() << ": "
-								<< events[i].get_booked_seats_which_are_not_bought() << endl;
-						}
-					}
-				}
-			}
-			else {
-				Date date(temporary);
-				string event_name;
-				cin >> event_name;
-
-				Event* found_event = find_event(event_name, date);
-
-				if (found_event != nullptr) {
-					cout << found_event->get_booked_seats_which_are_not_bought() << endl;
-				}
-				else {
-					cout << "Event not found" << endl;
-				}
-			}
-		}*/
 	}
 	void check(size_t serialNum) {
 		for (int i = 0; i < events.getCap(); ++i) {
@@ -124,10 +87,8 @@ public:
 	}
 	void report(const Date& dateFrom, const Date& dateTo, size_t hallNum) {
 		for (int i = 0; i < events.getCap(); ++i) {
-			if (!events[i].getHallNum() == hallNum) {
 				std::cout << events[i].getName() << ", " << events[i].getDate() << ": "
 					<< events[i].getBoughtSeatsOnDateInterval(dateFrom, dateTo) << "\n";
-			}
 		}
 	}
 };

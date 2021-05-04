@@ -101,7 +101,7 @@ public:
 		int counter = 0;
 		for (int i = 0; i < rows.getSize(); ++i) {
 			for (int j = 0; j < rows[i].getSize(); ++j) {
-				if (rows[i][j].isBought(dateFrom, dateTo)) {
+				if (rows[i][j].isBoughtInDateInterval(dateFrom, dateTo)) {
 					++counter;
 				}
 			}

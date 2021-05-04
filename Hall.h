@@ -31,9 +31,5 @@ public:
 	bool isFree(const Date& date) const {
 		return !isBooked(date);
 	}
-	/*friend std::istream& operator>>(std::istream& in, Hall& hall) {
-		in >> hall.rows >> hall.seatsPerRow;
-		return in;
-	}*/
 };
 

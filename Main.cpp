@@ -13,10 +13,11 @@ int main() {
 	ticket.addEvent(1, name, date);
 	ticket.addEvent(1, name2, date);
 	ticket.book(1, 1, date, name, note);
-	ticket.book(1, 3, date, name, note);
-	ticket.book(1, 4, date, name, note);
-	ticket.book(2, 2, date, name2, note2);
-	ticket.bookings();
+	//ticket.book(1, 3, date, name, note);
+	//ticket.book(1, 4, date, name, note);
+	//ticket.book(2, 2, date, name2, note2);
+	ticket.report(date, date2, 1);
+	//ticket.bookings();
 
 
 

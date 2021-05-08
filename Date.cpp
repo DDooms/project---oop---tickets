@@ -7,6 +7,8 @@ size_t Date::daysInMonth(size_t month, size_t year)
 
     else if (month == 2)
     {
+        if (isLeapYear(year))
+            return 29;
         return 28;
     }
     else if (month == 4 || month == 6 || month == 9 || month == 11)
@@ -31,9 +33,14 @@ bool Date::compareDates(Date& date1, Date& date2)
 
 bool Date::isDateCorrect(size_t day, size_t month, size_t year)
 {
-    if (day < 1 || day > 31 || month < 1 || month > 12 || year > 2021 || year < 2021)
+    if (day < 1 || day > 31 || month < 1 || month > 12)
         return false;
     return day <= daysInMonth(month, year);
+}
+
+bool Date::isLeapYear(size_t year)
+{
+    return year % 4 == 0 && (year % 100 != 0 || year % 400 == 0);
 }
 
 Date::Date() : day(0), month(0), year(0) {}
@@ -110,4 +117,10 @@ std::ostream& operator<<(std::ostream& out, const Date& current)
 {
     out << current.day << "." << current.month << "." << current.year << "\n";
     return out;
+}
+
+std::istream& operator>>(std::istream& in, Date& current)
+{
+    in >> current.day >> current.month >> current.year;
+    return in;
 }

@@ -99,8 +99,8 @@ public:
 	}
 	size_t getBoughtSeatsOnDateInterval(const Date& dateFrom, const Date& dateTo) const {
 		int counter = 0;
-		for (int i = 0; i < rows.getSize(); ++i) {
-			for (int j = 0; j < rows[i].getSize(); ++j) {
+		for (size_t i = 0; i < rows.getSize(); ++i) {
+			for (size_t j = 0; j < rows[i].getSize(); ++j) {
 				if (rows[i][j].isBoughtInDateInterval(dateFrom, dateTo)) {
 					++counter;
 				}

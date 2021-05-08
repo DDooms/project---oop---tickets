@@ -1,7 +1,5 @@
 ﻿  Main.cpp
 C:\Users\Beray\source\repos\Project1 - OOP\Project1 - OOP\Seat.h(16,13): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
-C:\Users\Beray\source\repos\Project1 - OOP\Project1 - OOP\Event.h(102,21): warning C4018: '<': signed/unsigned mismatch
-C:\Users\Beray\source\repos\Project1 - OOP\Project1 - OOP\Event.h(103,22): warning C4018: '<': signed/unsigned mismatch
-C:\Users\Beray\source\repos\Project1 - OOP\Project1 - OOP\Ticket.h(81,21): warning C4018: '<': signed/unsigned mismatch
-C:\Users\Beray\source\repos\Project1 - OOP\Project1 - OOP\Ticket.h(89,21): warning C4018: '<': signed/unsigned mismatch
+  String.cpp
+  Generating Code...
   Project1 - OOP.vcxproj -> C:\Users\Beray\source\repos\Project1 - OOP\Debug\Project1 - OOP.exe

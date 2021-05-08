@@ -9,6 +9,8 @@ class Ticket {
 	Vector<Event> events;
 public:
 	Event* findEvent(const String& name, const Date& date) {
+		size_t size = events.getSize();
+		//opravi size vuv for
 		for (size_t i = 0; i < events.getCap(); ++i) {
 			if (events[i].getName() == name && events[i].getDate() == date) {
 				return &(events[i]);
@@ -17,7 +19,12 @@ public:
 		return nullptr;
 	}
 
-	void addEvent(size_t hallNum, const String& eventName, const Date& date) {
+	void addEvent() {
+		//cheti ot konzolata
+		Date date;
+		size_t hallNum;
+		String eventName;
+		std::cin >> date >> hallNum >> eventName;
 		if (halls[hallNum].isBooked(date))
 		{
 			std::cout << "Hall is booked\n";
@@ -78,7 +85,9 @@ public:
 			}
 	}
 	void check(size_t serialNum) {
-		for (int i = 0; i < events.getCap(); ++i) {
+		size_t size = events.getSize();
+		//opravi size vuv for
+		for (size_t i = 0; i < events.getCap(); ++i) {
 			size_t seatNum = events[i].getSeatNum(serialNum);
 			if (seatNum != -1)
 				std::cout << "Valid ticket with seat: " << seatNum;
@@ -86,7 +95,9 @@ public:
 		}
 	}
 	void report(const Date& dateFrom, const Date& dateTo, size_t hallNum) {
-		for (int i = 0; i < events.getCap(); ++i) {
+		size_t size = events.getSize();
+		//opravi size vuv for
+		for (size_t i = 0; i < events.getCap(); ++i) {
 				std::cout << events[i].getName() << ", " << events[i].getDate() << ": "
 					<< events[i].getBoughtSeatsOnDateInterval(dateFrom, dateTo) << "\n";
 		}

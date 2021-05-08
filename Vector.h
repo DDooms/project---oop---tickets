@@ -30,13 +30,6 @@ public:
 		}
 		return out;
 	}
-	/*friend std::istream& operator>>(std::istream& in, Vector<T>& current) {
-		for (size_t i = 0; i < current.size; i++)
-		{
-			in >> current.vector[i];
-		}
-		return in;
-	}*/
 	void PushBack(const T& value) {
 		if (size >= capacity)
 			Resize();
@@ -84,7 +77,7 @@ public:
 	void print() const {
 		for (size_t i = 0; i < size; i++)
 		{
-			//std::cout << vector[i] << "\n";
+			std::cout << vector[i] << "\n";
 		}
 	}
 };

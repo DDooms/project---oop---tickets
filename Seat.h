@@ -14,7 +14,7 @@ class Seat {
 
 	size_t random() {
 		srand(time(0));
-		return rand() % 100;
+		return rand() % 10000;
 	}
 public:
 	Seat() : rowNumber(0), seatNumber(0), booked(false), note(""),ticketNum(0){}
@@ -40,8 +40,21 @@ public:
 	void buy(const Date& date) {
 		if (!isBought())
 		{
+			Vector<int> ticketNumCheck;
+			//proverka za razlichni nomera
+			ticketNumCheck.PushBack(50000);
 			book();
-			ticketNum = (rowNumber * 100 + seatNumber) * 100 + random();
+			size_t size = ticketNumCheck.getSize();
+			ticketNum = (rowNumber * 100 + seatNumber) * 10000 + random();
+			for (size_t i = 0; i < size; i++)
+			{
+				if (ticketNumCheck[i] == ticketNum)
+				{
+					ticketNum = (rowNumber * 100 + seatNumber) * 10000 + random();
+					continue;
+				}
+			}
+			ticketNumCheck.PushBack(ticketNum);
 			buyingDate = date;
 			std::cout << ticketNum;
 		}

@@ -8,13 +8,13 @@ class String {
 	size_t capacity;
 	void copy(const String& other);
 	void copyTwo(const char* other);
-
 	void erase();
 	void resize();
 public:
 	String();
 	String& operator=(const String& _String);
 	friend std::ostream& operator<<(std::ostream& out, const String& current);
+	friend std::istream& operator>>(std::istream& in, String& current);
 	String(const char* other);
 	String(const String& _String);
 	~String();

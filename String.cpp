@@ -120,3 +120,9 @@ std::ostream& operator<<(std::ostream& out, const String& current)
 	}
 	return out;
 }
+
+std::istream& operator>>(std::istream& in, String& current)
+{
+	in >> current.string;
+	return in;
+}

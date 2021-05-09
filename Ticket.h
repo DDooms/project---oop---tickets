@@ -24,31 +24,48 @@ public:
 		Date date;
 		size_t hallNum;
 		String eventName;
-		std::cin >> date >> hallNum >> eventName;
+		std::cin >> date;
+		std::cin >> hallNum;
+		std::cin.ignore();
+		std::cin >> eventName;
 		if (halls[hallNum].isBooked(date))
 		{
 			std::cout << "Hall is booked\n";
 		}
 		else
 		{
-			size_t rows, cols;
+			/*size_t rows, cols;
 			std::cout << "Enter rows: ";
 			std::cin >> rows;
 			std::cout << "Enter seats per row: ";
-			std::cin >> cols;
+			std::cin >> cols;*/
+			size_t rows = halls[hallNum].getRows();
+			size_t cols = halls[hallNum].getSeats();
 			Event newEvent(eventName, rows, cols, date, hallNum);
 			events.PushBack(newEvent);
 			halls[hallNum].book(date);
-		}
+			}
 	}
-	void freeSeats(const String& name, const Date& date) {
-		Event* foundEvent = findEvent(name, date);
+	void freeSeats() {
+		Date date;
+		size_t hallNum;
+		String eventName;
+		std::cin >> date;
+		std::cin.ignore();
+		std::cin >> eventName;
+		Event* foundEvent = findEvent(eventName, date);
 		if (foundEvent != nullptr)
 			std::cout << foundEvent->getFreeSeats() << "\n";
 		else std::cout << "Event not found\n";
 	}
-	void book(size_t rowNum, size_t seatNum, const Date& date, const String& name, const String& note) {
-		Event* foundEvent = findEvent(name, date);
+	void book() {
+		Date date;
+		size_t rowNum, seatNum;
+		String eventName, note;
+		std::cin >> date >> rowNum >> seatNum;
+		std::cin.ignore();
+		std::cin >> eventName >> note;
+		Event* foundEvent = findEvent(eventName, date);
 		if (!(foundEvent == nullptr))
 		{
 			if (foundEvent->isValid(rowNum, seatNum) && !foundEvent->isBooked(rowNum, seatNum))
@@ -57,8 +74,14 @@ public:
 		}
 		else std::cout << "Event not found\n";
 	}
-	void unbook(size_t rowNum, size_t seatNum, const Date& date, const String& name) {
-		Event* foundEvent = findEvent(name, date);
+	void unbook() {
+		Date date;
+		size_t rowNum, seatNum;
+		String eventName, note;
+		std::cin >> date >> rowNum >> seatNum;
+		std::cin.ignore();
+		std::cin >> eventName;
+		Event* foundEvent = findEvent(eventName, date);
 		if (foundEvent != nullptr)
 		{
 			if (foundEvent->isValid(rowNum, seatNum) && foundEvent->isBooked(rowNum, seatNum))
@@ -67,8 +90,14 @@ public:
 		}
 		else std::cout << "Event not found\n";
 	}
-	void buy(size_t rowNum, size_t seatNum, const Date& date, const String& name) {
-		Event* foundEvent = findEvent(name, date);
+	void buy() {
+		Date date;
+		size_t rowNum, seatNum;
+		String eventName, note;
+		std::cin >> date >> rowNum >> seatNum;
+		std::cin.ignore();
+		std::cin >> eventName;
+		Event* foundEvent = findEvent(eventName, date);
 		if (foundEvent != nullptr)
 		{
 			if (foundEvent->isValid(rowNum, seatNum) && foundEvent->isBooked(rowNum, seatNum))
@@ -84,7 +113,9 @@ public:
 					<< events[i].getBookedButNotBoughtSeats() << std::endl;
 			}
 	}
-	void check(size_t serialNum) {
+	void check() {
+		size_t serialNum;
+		std::cin >> serialNum;
 		size_t size = events.getSize();
 		//opravi size vuv for
 		for (size_t i = 0; i < events.getCap(); ++i) {
@@ -94,12 +125,18 @@ public:
 			else std::cout << "Invalid ticket\n";
 		}
 	}
-	void report(const Date& dateFrom, const Date& dateTo, size_t hallNum) {
+	void report() {
+		Date dateFrom, dateTo;
+		size_t hallNum;
+		std::cin >> dateFrom >> dateTo >> hallNum;
 		size_t size = events.getSize();
 		//opravi size vuv for
 		for (size_t i = 0; i < events.getCap(); ++i) {
+			/*if (events[i] == events[i].getHallNum())
+			{*/
 				std::cout << events[i].getName() << ", " << events[i].getDate() << ": "
 					<< events[i].getBoughtSeatsOnDateInterval(dateFrom, dateTo) << "\n";
+			//}	
 		}
 	}
 };

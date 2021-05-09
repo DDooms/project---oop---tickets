@@ -6,15 +6,12 @@ void String::copy(const String& other) {
 	string = new char[size + 1];
 	strcpy_s(string, size + 1, other.string);
 }
-void String::copyTwo(const char* other)
-{
+
+String::String(const char* other) {
 	capacity = strlen(other) + 1;
 	string = new char[capacity];
 	strcpy_s(string, capacity, other);
 	size = strlen(other);
-}
-String::String(const char* other) {
-	copyTwo(other);
 }
 void String::erase()
 {
@@ -46,6 +43,15 @@ String& String::operator=(const String& other) {
 	}
 	return *this;
 }
+String& String::operator=(const char* other)
+{
+	erase();
+	capacity = strlen(other) + 1;
+	string = new char[capacity];
+	size = strlen(other);
+	strcpy_s(string, capacity, other);
+	return *this;
+}
 String::String(const String& other) {
 	copy(other);
 }
@@ -68,22 +74,6 @@ size_t String::getCapacity() const
 	return capacity;
 }
 
-void String::setString(const char* _string)
-{
-	delete[] string;
-	string = new char[strlen(_string) + 1];
-	strcpy_s(string, strlen(_string) + 1, _string);
-}
-
-void String::setSize(size_t _size)
-{
-	size = _size;
-}
-
-void String::setCapacity(size_t _capacity)
-{
-	capacity = _capacity;
-}
 void String::print()
 {
 	for (size_t i = 0; i < size; i++)
@@ -92,7 +82,7 @@ void String::print()
 	}
 	std::cout << "\n";
 }
-char String::operator[](size_t index) {
+const char String::operator[](size_t index) const{
 	if (index >= size - 1)
 	{
 		std::cout << "Index too big!" << std::endl;
@@ -100,11 +90,15 @@ char String::operator[](size_t index) {
 	}
 	return string[index];
 }
-bool String::operator==(const String& _string)
+bool String::operator==(const String& _string) const
+{
+	return !strcmp(string, _string.string);
+}
+bool String::operator==(const char* _string) const
 {
 	for (size_t i = 0; i < size; ++i)
 	{
-		if (string[i] != _string.string[i])
+		if (_string[i] != string[i])
 		{
 			return false;
 		}
@@ -120,9 +114,52 @@ std::ostream& operator<<(std::ostream& out, const String& current)
 	}
 	return out;
 }
-
-std::istream& operator>>(std::istream& in, String& current)
+String String::operator+(String& other)
 {
-	in >> current.string;
+	String temp;
+	temp.copy(*this);
+	for (size_t i = 0; i < other.size; ++i)
+	{
+		temp += other[i];
+	}
+	return temp;
+}
+String& String::operator+=(const char _element)
+{
+	if (this->size + 1 >= this->capacity)
+	{
+		this->resize();
+	}
+	string[size] = _element;
+	size++;
+	string[size] = '\0';
+	return *this;
+}
+
+void String::removeLast()
+{
+	if (this->size >= 1)
+	{
+		this->size--;
+		char* newString = new char[capacity];
+		for (size_t i = 0; i < size; ++i)
+		{
+			newString[i] = string[i];
+		}
+		delete[] string;
+		string = newString;
+		string[size] = '\0';
+	}
+}
+
+std::istream& operator>>(std::istream& in, String& _string)
+{
+	char element = ' ';
+	while (element != '\n')
+	{
+		element = in.get();
+		_string += element;
+	}
+	_string.removeLast();
 	return in;
 }

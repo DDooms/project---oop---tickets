@@ -108,4 +108,18 @@ public:
 		}
 		return counter;
 	}
+	/*Row operator[](size_t index) const {
+		return rows[index];
+	}
+	bool operator==(const Event& other) const
+	{
+		for (size_t i = 0; i < rows.getSize(); ++i)
+		{
+			if (other[i] != rows[i])
+			{
+				return false;
+			}
+		}
+		return true;
+	}*/
 };

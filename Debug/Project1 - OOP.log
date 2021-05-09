@@ -1,5 +1,2 @@
-﻿  Main.cpp
-C:\Users\Beray\source\repos\Project1 - OOP\Project1 - OOP\Seat.h(16,13): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
-  String.cpp
-  Generating Code...
+﻿  String.cpp
   Project1 - OOP.vcxproj -> C:\Users\Beray\source\repos\Project1 - OOP\Debug\Project1 - OOP.exe

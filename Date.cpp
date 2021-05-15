@@ -93,21 +93,6 @@ size_t Date::getYears() const
     return year;
 }
 
-void Date::setDays(size_t days)
-{
-    day = days;
-}
-
-void Date::setMonths(size_t months)
-{
-    month = months;
-}
-
-void Date::setYears(size_t years)
-{
-    year = years;
-}
-
 void Date::print() const
 {
     std::cout << day << "." << month << "." << year << "\n";

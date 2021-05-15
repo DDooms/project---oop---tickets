@@ -22,10 +22,6 @@ public:
 	size_t getMonths() const;
 	size_t getYears() const;
 
-	void setDays(size_t days);
-	void setMonths(size_t months);
-	void setYears(size_t years);
-
 	void print() const;
 };
 

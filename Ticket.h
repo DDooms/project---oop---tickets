@@ -3,15 +3,13 @@
 #include "Hall.h"
 #include "Event.h"
 
-
 class Ticket {
 	Vector<Hall> halls;
 	Vector<Event> events;
-public:
+
 	Event* findEvent(const String& name, const Date& date) {
 		size_t size = events.getSize();
-		//opravi size vuv for
-		for (size_t i = 0; i < events.getCap(); ++i) {
+		for (size_t i = 0; i < size; ++i) {
 			if (events[i].getName() == name && events[i].getDate() == date) {
 				return &(events[i]);
 			}
@@ -24,9 +22,12 @@ public:
 		Date date;
 		size_t hallNum;
 		String eventName;
+		std::cout << "Enter a date: ";
 		std::cin >> date;
+		std::cout << "Enter a hall number: ";
 		std::cin >> hallNum;
 		std::cin.ignore();
+		std::cout << "Enter an event name: ";
 		std::cin >> eventName;
 		if (halls[hallNum].isBooked(date))
 		{
@@ -50,7 +51,9 @@ public:
 		Date date;
 		size_t hallNum;
 		String eventName;
+		std::cout << "Enter a date: ";
 		std::cin >> date;
+		std::cout << "Enter an event name: ";
 		std::cin.ignore();
 		std::cin >> eventName;
 		Event* foundEvent = findEvent(eventName, date);
@@ -62,9 +65,16 @@ public:
 		Date date;
 		size_t rowNum, seatNum;
 		String eventName, note;
-		std::cin >> date >> rowNum >> seatNum;
+		std::cout << "Enter a date: ";
+		std::cin >> date;
+		std::cout << "Enter a row, then a seat number : ";
+		std::cin >> rowNum >> seatNum;
+		std::cout << "Enter an event name: ";
 		std::cin.ignore();
-		std::cin >> eventName >> note;
+		std::cin >> eventName;
+		std::cout << "Enter a note: ";
+		std::cin.ignore();
+		std::cin >> note;
 		Event* foundEvent = findEvent(eventName, date);
 		if (!(foundEvent == nullptr))
 		{
@@ -78,7 +88,11 @@ public:
 		Date date;
 		size_t rowNum, seatNum;
 		String eventName, note;
-		std::cin >> date >> rowNum >> seatNum;
+		std::cout << "Enter a date: ";
+		std::cin >> date;
+		std::cout << "Enter a row, then a seat number : ";
+		std::cin >> rowNum >> seatNum;
+		std::cout << "Enter an event name: ";
 		std::cin.ignore();
 		std::cin >> eventName;
 		Event* foundEvent = findEvent(eventName, date);
@@ -93,8 +107,12 @@ public:
 	void buy() {
 		Date date;
 		size_t rowNum, seatNum;
-		String eventName, note;
-		std::cin >> date >> rowNum >> seatNum;
+		String eventName;
+		std::cout << "Enter a date: ";
+		std::cin >> date;
+		std::cout << "Enter a row, then a seat number : ";
+		std::cin  >> rowNum >> seatNum;
+		std::cout << "Enter an event name: ";
 		std::cin.ignore();
 		std::cin >> eventName;
 		Event* foundEvent = findEvent(eventName, date);
@@ -107,18 +125,62 @@ public:
 		else std::cout << "Event not found\n";
 	}
 	void bookings() {
-			size_t size = events.getSize();
+		size_t size = events.getSize();
+		Date tempDate;
+		String tempName;
+		std::cout << "If you want to see all bookings, type 'a'. If you want to see a show by its name, press enter and type the name\n"
+			<< "If you want to see a show by the date, type 'b', then enter the date\n";
+		std::cout << "If you want to enter a name and a date, press space, then enter\n";
+		if (std::cin.peek() == 'a')
+		{	
 			for (size_t i = 0; i < size; ++i) {
 				std::cout << events[i].getName() << ", " << events[i].getDate() << ": "
 					<< events[i].getBookedButNotBoughtSeats() << std::endl;
 			}
+		}
+		else if (std::cin.peek() == '\n')
+		{
+			
+			if (std::cin.peek() == 'b')
+			{
+				std::cout << "Enter a date: ";
+				std::cin >> tempDate;
+				for (size_t i = 0; i < size; ++i) {
+					if (events[i].getDate() == tempDate)
+						std::cout << events[i].getDate() << ": " << events[i].getBookedButNotBoughtSeats() << std::endl;
+				}
+			}
+			else
+			{
+				std::cout << "Enter a name: ";
+				std::cin.ignore();
+				std::cin >> tempName;
+				for (size_t i = 0; i < size; ++i) {
+					if (events[i].getName() == tempName)
+						std::cout << events[i].getName() << ": " << events[i].getBookedButNotBoughtSeats() << std::endl;
+				}
+			}		
+		}
+		else
+		{
+			std::cout << "Enter a date: ";
+			std::cin >> tempDate;
+			std::cin.ignore();
+			std::cout << "Enter a name: ";
+			std::cin >> tempName;
+
+			Event* foundEvent = findEvent(tempName, tempDate);
+			if (!(foundEvent == nullptr))
+				std::cout << foundEvent->getBookedButNotBoughtSeats();
+			else std::cout << "Event not found\n";
+		}
 	}
 	void check() {
 		size_t serialNum;
+		std::cout << "Enter a serial number for the ticket: ";
 		std::cin >> serialNum;
 		size_t size = events.getSize();
-		//opravi size vuv for
-		for (size_t i = 0; i < events.getCap(); ++i) {
+		for (size_t i = 0; i < size; ++i) {
 			size_t seatNum = events[i].getSeatNum(serialNum);
 			if (seatNum != -1)
 				std::cout << "Valid ticket with seat: " << seatNum;
@@ -128,15 +190,57 @@ public:
 	void report() {
 		Date dateFrom, dateTo;
 		size_t hallNum;
-		std::cin >> dateFrom >> dateTo >> hallNum;
+		bool weHaveHallNum = false;
+		std::cout << "Please enter a timespan from date to date you want to check wether there are bookings or not.\n"
+			<< "Note: If you want to check exact hall, after entering the second date, press space, then enter\n";
+		std::cin >> dateFrom >> dateTo;
+		if (std::cin.peek() != '\n')
+		{
+			std::cout << "You want to check exact hall. Please enter a number: ";
+			std::cin >> hallNum;
+			weHaveHallNum = true;
+		}
 		size_t size = events.getSize();
-		//opravi size vuv for
-		for (size_t i = 0; i < events.getCap(); ++i) {
-			/*if (events[i] == events[i].getHallNum())
-			{*/
+		for (size_t i = 0; i < size; ++i) {
+			if (!weHaveHallNum||events[i].getHallNum() == hallNum)
+			{
 				std::cout << events[i].getName() << ", " << events[i].getDate() << ": "
 					<< events[i].getBoughtSeatsOnDateInterval(dateFrom, dateTo) << "\n";
-			//}	
+			}	
+		}
+	}
+public:
+	void run() {
+		std::cout << "Please enter all dates in the format: DD-MM-YYYY" << std::endl;
+		String command;
+		std::cout << "Enter a command: ";
+		while (true) {
+			std::cin >> command;
+
+			if (command == "addevent") {
+				addEvent();
+			}
+			else if (command == "freeseats") {
+				freeSeats();
+			}
+			else if (command == "book") {
+				book();
+			}
+			else if (command == "unbook") {
+				unbook();
+			}
+			else if (command == "buy") {
+				buy();
+			}
+			else if (command == "bookings") {
+				bookings();
+			}
+			else if (command == "check") {
+				check();
+			}
+			else if (command == "report") {
+				report();
+			}
 		}
 	}
 };

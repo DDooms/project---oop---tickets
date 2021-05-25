@@ -1,41 +1,35 @@
 #include "Date.h"
 
-size_t Date::daysInMonth(size_t month, size_t year)
-{
-    if (month == 1 || month == 3 || month == 5 || month == 7 || month == 8 || month == 10 || month == 12)
-        return 31;
-
-    else if (month == 2)
-    {
-        if (isLeapYear(year))
-            return 29;
-        return 28;
-    }
-    else if (month == 4 || month == 6 || month == 9 || month == 11)
-        return 30;
-    return 0;
-}
-
-bool Date::compareDates(Date& date1, Date& date2)
-{
-    if (date1.year == date2.year)
-    {
-        if (date1.month == date2.month)
-        {
-            if (date1.day == date2.day)
-                return false;
-            return true;
-        }
-        return false;
-    }
-    return false;
-}
 
 bool Date::isDateCorrect(size_t day, size_t month, size_t year)
 {
-    if (day < 1 || day > 31 || month < 1 || month > 12)
+    if (day < 1 || day > 31 || month < 1 || month > 12 || year <= 2020)
         return false;
-    return day <= daysInMonth(month, year);
+    else
+    {
+        if (month == 1 || month == 3 || month == 5 || month == 7 || month == 8 || month == 10 || month == 12) {
+            if (day >= 1 && day <= 31)
+                return true;
+        }
+
+        else if (month == 2)
+        {
+                if (isLeapYear(year))
+                    if (day >= 1 && day <= 29) {
+                        return true;
+                    }
+                else
+                {
+                    if (day >= 1 && day <= 28)
+                        return true;
+                }
+        }
+        else if (month == 4 || month == 6 || month == 9 || month == 11) {
+            if (day >= 1 && day <= 30)
+                return true;
+        }
+    }
+    return 0;
 }
 
 bool Date::isLeapYear(size_t year)

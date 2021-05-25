@@ -16,32 +16,53 @@ class Ticket {
 		}
 		return nullptr;
 	}
-
-	void addEvent() {
-		//cheti ot konzolata
+	void loadEvents(std::ofstream& out) {
+		std::cout << "You are adding an event to the database\n";
 		Date date;
 		size_t hallNum;
 		String eventName;
-		std::cout << "Enter a date: ";
-		std::cin >> date;
+		do
+		{
+			std::cout << "Enter a correct date: ";
+			std::cin >> date;
+		} while (!date.isDateCorrect(date.getDays(), date.getMonths(), date.getYears()));
 		std::cout << "Enter a hall number: ";
 		std::cin >> hallNum;
 		std::cin.ignore();
 		std::cout << "Enter an event name: ";
 		std::cin >> eventName;
+	}
+	void saveEvents(std::ifstream& in) {
+
+	}
+
+	void addEvent() {
+		std::cout << "You are adding an event to the database\n";
+		loadEvents()
+		/*Date date;
+		size_t hallNum;
+		String eventName;
+		do
+		{
+			std::cout << "Enter a correct date: ";
+			std::cin >> date;
+		} while (!date.isDateCorrect(date.getDays(), date.getMonths(), date.getYears()));
+		std::cout << "Enter a hall number: ";
+		std::cin >> hallNum;
+		std::cin.ignore();
+		std::cout << "Enter an event name: ";
+		std::cin >> eventName;*/
 		if (halls[hallNum].isBooked(date))
 		{
 			std::cout << "Hall is booked\n";
 		}
 		else
 		{
-			/*size_t rows, cols;
+			size_t rows, cols;
 			std::cout << "Enter rows: ";
 			std::cin >> rows;
 			std::cout << "Enter seats per row: ";
-			std::cin >> cols;*/
-			size_t rows = halls[hallNum].getRows();
-			size_t cols = halls[hallNum].getSeats();
+			std::cin >> cols;
 			Event newEvent(eventName, rows, cols, date, hallNum);
 			events.PushBack(newEvent);
 			halls[hallNum].book(date);
@@ -52,8 +73,11 @@ class Ticket {
 		Date date;
 		size_t hallNum;
 		String eventName;
-		std::cout << "Enter a date: ";
-		std::cin >> date;
+		do
+		{
+			std::cout << "Enter a correct date: ";
+			std::cin >> date;
+		} while (!date.isDateCorrect(date.getDays(), date.getMonths(), date.getYears()));
 		std::cout << "Enter an event name: ";
 		std::cin.ignore();
 		std::cin >> eventName;
@@ -67,8 +91,11 @@ class Ticket {
 		Date date;
 		size_t rowNum, seatNum;
 		String eventName, note;
-		std::cout << "Enter a date: ";
-		std::cin >> date;
+		do
+		{
+			std::cout << "Enter a correct date: ";
+			std::cin >> date;
+		} while (!date.isDateCorrect(date.getDays(), date.getMonths(), date.getYears()));
 		std::cout << "Enter a row, then a seat number : ";
 		std::cin >> rowNum >> seatNum;
 		std::cout << "Enter an event name: ";
@@ -91,8 +118,11 @@ class Ticket {
 		Date date;
 		size_t rowNum, seatNum;
 		String eventName, note;
-		std::cout << "Enter a date: ";
-		std::cin >> date;
+		do
+		{
+			std::cout << "Enter a correct date: ";
+			std::cin >> date;
+		} while (!date.isDateCorrect(date.getDays(), date.getMonths(), date.getYears()));
 		std::cout << "Enter a row, then a seat number : ";
 		std::cin >> rowNum >> seatNum;
 		std::cout << "Enter an event name: ";
@@ -112,8 +142,11 @@ class Ticket {
 		Date date;
 		size_t rowNum, seatNum;
 		String eventName;
-		std::cout << "Enter a date: ";
-		std::cin >> date;
+		do
+		{
+			std::cout << "Enter a correct date: ";
+			std::cin >> date;
+		} while (!date.isDateCorrect(date.getDays(), date.getMonths(), date.getYears()));
 		std::cout << "Enter a row, then a seat number : ";
 		std::cin  >> rowNum >> seatNum;
 		std::cout << "Enter an event name: ";
@@ -200,7 +233,16 @@ class Ticket {
 		bool weHaveHallNum = false;
 		std::cout << "Please enter a timespan from date to date you want to check wether there are bookings or not.\n"
 			<< "Note: If you want to check exact hall, after entering the second date, press space, then enter\n";
-		std::cin >> dateFrom >> dateTo;
+		do
+		{
+			std::cout << "Enter a date, from which you want to check. Note: the date must be correct:\n";
+			std::cin >> dateFrom >> dateTo;
+		} while (!dateFrom.isDateCorrect(dateFrom.getDays(), dateFrom.getMonths(), dateFrom.getYears()));
+		do
+		{
+			std::cout << "Enter a date, to which you want to check. Note: the date must be correct:\n";
+			std::cin >> dateTo;
+		} while (!dateTo.isDateCorrect(dateTo.getDays(), dateTo.getMonths(), dateTo.getYears()));
 		if (std::cin.peek() != '\n')
 		{
 			std::cout << "You want to check exact hall. Please enter a number: ";

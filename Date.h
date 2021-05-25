@@ -3,10 +3,6 @@
 class Date
 {
 	size_t day, month, year;
-
-	size_t daysInMonth(size_t month, size_t year);
-	bool compareDates(Date& date1, Date& date2);
-	bool isDateCorrect(size_t day, size_t month, size_t year);
 	bool isLeapYear(size_t year);
 public:
 	Date();
@@ -17,6 +13,7 @@ public:
 	bool operator==(const Date& other) const;
 	bool operator<=(const Date& other) const;
 	bool operator>=(const Date& other) const;
+	bool isDateCorrect(size_t day, size_t month, size_t year);
 
 	size_t getDays() const;
 	size_t getMonths() const;

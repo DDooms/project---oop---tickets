@@ -15,24 +15,38 @@ void Command::open()
 		std::cout << "Enter a filename. Note: it should end with .txt!\n";
 		std::cin >> filename;
 		size_t size = filename.getSize();
-		const char* filen = filename.getString();
-		if ((filename[0] != 'C' && filename[0] != 'D') || filename[1] != ':' || filename[2] != '\\')
+		while (filename[size - 4] != '.' || filename[size - 3] != 't' || filename[size - 2] != 'x' || filename[size - 1] != 't')
 		{
-			std::cout << "Please use the format DISK:\\PATH\\...\\filename.txt\n";
-			return;
+			std::cout << "File name must end with .txt !\nEnter the filename again: ";
+			filename = "";
+			std::cin >> filename;
+			size = filename.getSize();
 		}
-		if (filename[size - 4] != '.' || filename[size - 3] != 't' || filename[size - 2] != 'x' || filename[size - 1] != 't')
+		/*if (filename[size - 4] != '.' || filename[size - 3] != 't' || filename[size - 2] != 'x' || filename[size - 1] != 't')
 		{
-			std::cout << "File name must end with .txt !\n";
+			std::cout << "File name must end with .txt !\nEnter the filename again: ";
 			return;
-		}
-		std::fstream file(filen);
+		}*/
+		std::ofstream file;
+		file.open(filename.getString());
 		if (file.fail())
 		{
 			std::cout << "File did not open...\n";
+			return;
 		}
 		FileName = filename;
 		isOpened = true;
 	}
 }
+
+void Command::save()
+{
+	if (!isOpened)
+	{
+		std::cout << "File not opened\n";
+		return;
+	}
+	std::ofstream file(FileName.getString());
+}
+
 

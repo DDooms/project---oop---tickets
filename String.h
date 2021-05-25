@@ -30,4 +30,6 @@ public:
 	bool operator==(const String& _string) const;
 	bool operator==(const char*) const;
 	const char operator[](size_t index) const;
+
+	void tolower();
 };

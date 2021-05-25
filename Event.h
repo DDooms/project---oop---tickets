@@ -108,4 +108,15 @@ public:
 		}
 		return counter;
 	}
+	friend std::ostream& operator<<(std::ostream& out, const Event& current) {
+		out << current.name;
+		out << current.date;
+		size_t size = current.rows.getSize();
+		for (size_t i = 0; i < size; i++)
+		{
+			out << current.rows[i] << "\n";
+		}
+		out << current.hallNum;
+		return out;
+	}
 };

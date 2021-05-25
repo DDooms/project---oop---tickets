@@ -83,12 +83,14 @@ void String::print()
 	std::cout << "\n";
 }
 const char String::operator[](size_t index) const{
-	if (index >= size - 1)
-	{
-		std::cout << "Index too big!" << std::endl;
-		return 0;
-	}
 	return string[index];
+}
+void String::tolower()
+{
+	for (int i = 0; i < size; i++) {
+		if (string[i] >= 'A' && string[i] <= 'Z')
+			string[i] = string[i] + ('a' - 'A');
+	}
 }
 bool String::operator==(const String& _string) const
 {

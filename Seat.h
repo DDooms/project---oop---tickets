@@ -64,7 +64,14 @@ public:
 	}
 	bool isBoughtInDateInterval(const Date& dateFrom, const Date& dateTo) const {
 		return buyingDate >= dateFrom && buyingDate <= dateTo;
-
 	}
-
+	friend std::ostream& operator<<(std::ostream& out, const Seat& current) {
+		out << current.rowNumber;
+		out << current.seatNumber;
+		out << current.booked;
+		out << current.note;
+		out << current.ticketNum;
+		out << current.buyingDate;
+		return out;
+	}
 };

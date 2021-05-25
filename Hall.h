@@ -31,5 +31,15 @@ public:
 	bool isFree(const Date& date) const {
 		return !isBooked(date);
 	}
+	friend std::ostream& operator<<(std::ostream& out, const Hall& current) {
+		out << current.rows;
+		out << current.seatsPerRow;
+		size_t size = current.bookedDates.getSize();
+		for (size_t i = 0; i < size; i++)
+		{
+			out << current.bookedDates[i] << "\n";
+		}
+		return out;
+	}
 };
 

@@ -20,4 +20,13 @@ public:
 	Seat& operator[](size_t index) const {
 		return seats[index];
 	}
+	friend std::ostream& operator<<(std::ostream& out, const Row& current) {
+		out << current.rowNumber;
+		size_t size = current.seats.getSize();
+		for (size_t i = 0; i < size; i++)
+		{
+			out << current.seats[i] << "\n";
+		}
+		return out;
+	}
 };

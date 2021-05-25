@@ -46,6 +46,7 @@ class Ticket {
 			events.PushBack(newEvent);
 			halls[hallNum].book(date);
 			}
+		run();
 	}
 	void freeSeats() {
 		Date date;
@@ -60,6 +61,7 @@ class Ticket {
 		if (foundEvent != nullptr)
 			std::cout << foundEvent->getFreeSeats() << "\n";
 		else std::cout << "Event not found\n";
+		run();
 	}
 	void book() {
 		Date date;
@@ -83,6 +85,7 @@ class Ticket {
 			else std::cout << "Seat not available\n";
 		}
 		else std::cout << "Event not found\n";
+		run();
 	}
 	void unbook() {
 		Date date;
@@ -103,6 +106,7 @@ class Ticket {
 			else std::cout << "Seat not available\n";
 		}
 		else std::cout << "Event not found\n";
+		run();
 	}
 	void buy() {
 		Date date;
@@ -123,6 +127,7 @@ class Ticket {
 			else std::cout << "Seat not available\n";
 		}
 		else std::cout << "Event not found\n";
+		run();
 	}
 	void bookings() {
 		size_t size = events.getSize();
@@ -174,6 +179,7 @@ class Ticket {
 				std::cout << foundEvent->getBookedButNotBoughtSeats();
 			else std::cout << "Event not found\n";
 		}
+		run();
 	}
 	void check() {
 		size_t serialNum;
@@ -186,6 +192,7 @@ class Ticket {
 				std::cout << "Valid ticket with seat: " << seatNum;
 			else std::cout << "Invalid ticket\n";
 		}
+		run();
 	}
 	void report() {
 		Date dateFrom, dateTo;
@@ -208,6 +215,7 @@ class Ticket {
 					<< events[i].getBoughtSeatsOnDateInterval(dateFrom, dateTo) << "\n";
 			}	
 		}
+		run();
 	}
 public:
 	void run() {
@@ -215,7 +223,9 @@ public:
 		String command;
 		std::cout << "Enter a command: ";
 		while (true) {
+			//probvay switch case
 			std::cin >> command;
+			command.tolower();
 
 			if (command == "addevent") {
 				addEvent();

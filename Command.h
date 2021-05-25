@@ -15,5 +15,6 @@ public:
 	void saveAs(const String& filename);
 	void help() const;
 	void exit();
+	bool doesItExist(const String& name);
 };
 

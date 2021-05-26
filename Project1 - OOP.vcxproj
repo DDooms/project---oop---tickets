@@ -141,17 +141,24 @@
   <ItemGroup>
     <ClCompile Include="Command.cpp" />
     <ClCompile Include="Date.cpp" />
+    <ClCompile Include="Event.cpp" />
+    <ClCompile Include="Hall.cpp" />
     <ClCompile Include="Main.cpp" />
+    <ClCompile Include="Row.cpp" />
+    <ClCompile Include="Seat.cpp" />
     <ClCompile Include="String.cpp" />
+    <ClCompile Include="Ticket.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Command.h" />
     <ClInclude Include="Date.h" />
+    <ClInclude Include="doctest.h" />
     <ClInclude Include="Event.h" />
     <ClInclude Include="Hall.h" />
     <ClInclude Include="Row.h" />
     <ClInclude Include="Seat.h" />
     <ClInclude Include="String.h" />
+    <ClInclude Include="Test.h" />
     <ClInclude Include="Ticket.h" />
     <ClInclude Include="Vector.h" />
   </ItemGroup>

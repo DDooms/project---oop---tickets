@@ -1,20 +1,11 @@
 #include "Ticket.h"
 #include "Command.h"
+#include "Test.h"
 
 int main() {
-	//da si suzdam glaven class za faylove
-	Command command;
-	command.open();
-	Ticket ticket;
-	ticket.run();
-	command.save();
-
-	
-
-
-	/*Ticket ticket;
-	ticket.addEvent();*/
-	/*ticket.book(1, 1, date, name, note);
-	ticket.bookings();*/
+	String string;
+	std::cin >> string;
+	std::cout << string;
+	runtests();
 	return 0;
 }

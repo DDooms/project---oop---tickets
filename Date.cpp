@@ -29,7 +29,7 @@ bool Date::isDateCorrect(size_t day, size_t month, size_t year)
                 return true;
         }
     }
-    return 0;
+    return false;
 }
 
 bool Date::isLeapYear(size_t year)
@@ -100,6 +100,7 @@ std::ostream& operator<<(std::ostream& out, const Date& current)
 
 std::istream& operator>>(std::istream& in, Date& current)
 {
-    in >> current.day >> current.month >> current.year;
+    char symbol;
+    in >> current.day >> symbol >> current.month >> symbol >> current.year;
     return in;
 }

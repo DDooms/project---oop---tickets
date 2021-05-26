@@ -160,8 +160,8 @@ std::istream& operator>>(std::istream& in, String& _string)
 	while (element != '\n')
 	{
 		element = in.get();
-		_string += element;
+		if (element != '\n')
+			_string += element;
 	}
-	_string.removeLast();
 	return in;
 }

@@ -27,6 +27,21 @@
     <ClCompile Include="Command.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="Seat.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Row.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Hall.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Event.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Ticket.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Date.h">
@@ -54,6 +69,12 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="Command.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="doctest.h">
+      <Filter>Resource Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Test.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

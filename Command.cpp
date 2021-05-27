@@ -49,8 +49,6 @@ void Command::save()
 		return;
 	}
 	std::ofstream file(this->FileName.getString());
-	Ticket ticket;
-	//ticket.addEvent(file);
 	std::cout << "Saved!\n";
 	isChanged = false;
 }

@@ -21,21 +21,25 @@ Seat& Row::operator[](size_t index) const {
 std::ostream& operator<<(std::ostream& out, const Row& current) {
 	size_t size = current.seats.getSize();
 	out << size << "\n";
-	out << current.rowNumber;
 	for (size_t i = 0; i < size; i++)
 	{
-		out << current.seats[i] << "\n";
+		out << current.seats[i];
+		if (i != size -1)
+		{
+			out << "\n";
+		}	
 	}
 	return out;
 }
 
 std::istream& operator>>(std::istream& in, Row& current) {
-	size_t size = current.seats.getSize();
+	size_t size;
 	in >> size;
-	in >> current.rowNumber;
 	for (size_t i = 0; i < size; i++)
 	{
-		in >> current.seats[i];
+		Seat temp;
+		in >> temp;
+		current.seats.PushBack(temp);
 	}
 	return in;
 }

@@ -1,6 +1,3 @@
-﻿  Main.cpp
-C:\Users\Beray\source\repos\Project1 - OOP\Project1 - OOP\Ticket.h(63,10): warning C4101: 'hallNum': unreferenced local variable
-  String.cpp
-C:\Users\Beray\source\repos\Project1 - OOP\Project1 - OOP\String.cpp(90,20): warning C4018: '<': signed/unsigned mismatch
-  Generating Code...
+﻿  Seat.cpp
+C:\Users\Beray\source\repos\Project1 - OOP\Project1 - OOP\Seat.cpp(66,12): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
   Project1 - OOP.vcxproj -> C:\Users\Beray\source\repos\Project1 - OOP\Debug\Project1 - OOP.exe

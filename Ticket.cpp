@@ -10,6 +10,7 @@ Event* Ticket::findEvent(const String& name, const Date& date) {
 	return nullptr;
 }
 
+
 void Ticket::addEvent() {
 	std::cout << "You are adding an event to the database\n";
 	Date date;
@@ -40,13 +41,6 @@ void Ticket::addEvent() {
 		Event newEvent(eventName, rows, cols, date, hallNum);
 		events.PushBack(newEvent);
 		halls[hallNum].book(date);
-
-		/*std::ofstream file;
-		file.open(filename.getString());
-		if (file.is_open())
-		{
-			file << newEvent;
-		}*/
 	}
 	run();
 }

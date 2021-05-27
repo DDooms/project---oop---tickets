@@ -24,11 +24,28 @@ public:
 		vector = new T[capacity];
 	}
 	friend std::ostream& operator<<(std::ostream& out, const Vector<T>& current) {
+		out << current.getSize() << "\n";
 		for (size_t i = 0; i < current.size; i++)
 		{
-			out << current.vector[i] << "\n";
+			out << current.vector[i];
+			if (i != current.size - 1)
+			{
+				out << "\n";
+			}
 		}
 		return out;
+	}
+	friend std::istream& operator>>(std::istream& in, Vector<T>& current) {
+		size_t size;
+		in >> size;
+		in.ignore();
+		for (size_t i = 0; i < size; ++i)
+		{
+			T element;
+			in >> element;
+			current.PushBack(element);
+		}
+		return in;
 	}
 	void PushBack(const T& value) {
 		if (size >= capacity)
@@ -73,12 +90,6 @@ public:
 				return true;
 		}
 		return false;
-	}
-	void print() const {
-		for (size_t i = 0; i < size; i++)
-		{
-			std::cout << vector[i] << "\n";
-		}
 	}
 };
 

@@ -3,9 +3,11 @@
 #include "Test.h"
 
 int main() {
-	String string;
-	std::cin >> string;
-	std::cout << string;
 	runtests();
+	std::ifstream file("text.txt");
+	Event event;
+	event.loadEvent(file);
+	std::cout << event.getDate() << "\n";
+	std::cout << event.getAllSeats();
 	return 0;
 }

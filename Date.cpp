@@ -39,13 +39,9 @@ bool Date::isLeapYear(size_t year)
 
 Date::Date() : day(0), month(0), year(0) {}
 Date::Date(size_t days, size_t months, size_t years) : Date(){
-    if (isDateCorrect(days, months, years))
-    {
         day = days;
         month = months;
         year = years;
-    }
-    else std::cout << "Nice, you can't enter a correct date...\n";
 }
 Date& Date::operator=(const Date& other)
 {
@@ -87,14 +83,9 @@ size_t Date::getYears() const
     return year;
 }
 
-void Date::print() const
-{
-    std::cout << day << "." << month << "." << year << "\n";
-}
-
 std::ostream& operator<<(std::ostream& out, const Date& current)
 {
-    out << current.day << "." << current.month << "." << current.year << "\n";
+    out << current.day << "." << current.month << "." << current.year;
     return out;
 }
 

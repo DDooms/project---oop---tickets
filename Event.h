@@ -26,6 +26,10 @@ public:
 	void buyTicket(size_t rowNumber, size_t seatNumber, const Date& date);
 	size_t getBookedButNotBoughtSeats() const;
 	size_t getBoughtSeatsOnDateInterval(const Date& dateFrom, const Date& dateTo) const;
-	friend std::ostream& operator<<(std::ostream& out, const Event& current);
+
+	void saveEvent(std::ostream& file);
+	void loadEvent(std::istream& file);
+
+	//friend std::ostream& operator<<(std::ostream& out, const Event& current);
 	friend std::istream& operator>>(std::istream& in, Event& current);
 };

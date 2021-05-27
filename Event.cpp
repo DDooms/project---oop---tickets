@@ -116,18 +116,38 @@ size_t Event::getBoughtSeatsOnDateInterval(const Date& dateFrom, const Date& dat
 	return counter;
 }
 
-std::ostream& operator<<(std::ostream& out, const Event& current) {
-	size_t size = current.rows.getSize();
-	out << size << "\n";
-	out << current.name << "\n";
-	out << current.date << "\n";
-	for (size_t i = 0; i < size; i++)
-	{
-		out << current.rows[i] << "\n";
-	}
-	out << current.hallNum << "\n";
-	return out;
+void Event::saveEvent(std::ostream& file)
+{							   
+	file << name << "\n";
+	file << date << "\n";
+	file << rows << "\n";
+	file << hallNum << "\n";						   											   
 }
+
+void Event::loadEvent(std::istream& file)
+{
+	file >> name;
+	if (name == "\n")
+	{
+		file >> name;
+	}
+	file >> date;
+	file >> rows;
+	file >> hallNum;
+}
+														   
+//std::ostream& operator<<(std::ostream& out, const Event& current) {
+//	size_t size = current.rows.getSize();
+//	out << size << "\n";
+//	out << current.name << "\n";
+//	out << current.date << "\n";
+//	for (size_t i = 0; i < size; i++)
+//	{
+//		out << current.rows[i] << "\n";
+//	}
+//	out << current.hallNum << "\n";
+//	return out;
+//}
 std::istream& operator>>(std::istream& in, Event& current) {
 	size_t size = current.rows.getSize();
 	in >> size;

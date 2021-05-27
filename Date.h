@@ -18,7 +18,5 @@ public:
 	size_t getDays() const;
 	size_t getMonths() const;
 	size_t getYears() const;
-
-	void print() const;
 };
 

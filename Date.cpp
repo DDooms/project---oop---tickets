@@ -1,9 +1,9 @@
 #include "Date.h"
 
 
-bool Date::isDateCorrect(size_t day, size_t month, size_t year)
+bool Date::isDateCorrect(size_t year, size_t month, size_t day)
 {
-    if (day < 1 || day > 31 || month < 1 || month > 12 || year <= 2020)
+    if (day < 1 || day > 31 || month < 1 || month > 12 || year < 2021)
         return false;
     else
     {
@@ -37,35 +37,35 @@ bool Date::isLeapYear(size_t year)
     return year % 4 == 0 && (year % 100 != 0 || year % 400 == 0);
 }
 
-Date::Date() : day(0), month(0), year(0) {}
-Date::Date(size_t days, size_t months, size_t years) : Date(){
-        day = days;
-        month = months;
+Date::Date() : year(0), month(0), day(0) {}
+Date::Date(size_t years, size_t months, size_t days) : Date(){
         year = years;
+        month = months;
+        day = days;
 }
 Date& Date::operator=(const Date& other)
 {
     if (this != &other)
     {
-        day = other.day;
-        month = other.month;
         year = other.year;
+        month = other.month;
+        day = other.day;
     }
     return *this;
 }
 bool Date::operator==(const Date& other) const
 {
-    return day == other.day && month == other.month && year == other.year;
+    return year == other.year && month == other.month && day == other.day;
 }
 
 bool Date::operator<=(const Date& other) const
 {
-    return day <= other.day && month <= other.month && year <= other.year;
+    return year <= other.year && month <= other.month && day <= other.day;
 }
 
 bool Date::operator>=(const Date& other) const
 {
-    return day >= other.day && month >= other.month && year >= other.year;
+    return year >= other.year && month >= other.month && day >= other.day;
 }
 
 size_t Date::getDays() const
@@ -85,13 +85,12 @@ size_t Date::getYears() const
 
 std::ostream& operator<<(std::ostream& out, const Date& current)
 {
-    out << current.day << "." << current.month << "." << current.year;
+    out << current.year << "." << current.month << "." << current.day;
     return out;
 }
 
 std::istream& operator>>(std::istream& in, Date& current)
 {
-    char symbol;
-    in >> current.day >> symbol >> current.month >> symbol >> current.year;
+    in >> current.year >> current.month >> current.day;
     return in;
 }

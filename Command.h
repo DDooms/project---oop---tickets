@@ -1,6 +1,7 @@
 #pragma once
 #include "String.h"
 #include <fstream>
+#include "Ticket.h"
 class Command
 {
 	bool isOpened;
@@ -12,9 +13,8 @@ public:
 	void open();
 	void close();
 	void save();
-	void saveAs(const String& filename);
+	void saveAs();
 	void help() const;
-	void exit();
-	bool doesItExist(const String& name);
+	void run();
 };
 

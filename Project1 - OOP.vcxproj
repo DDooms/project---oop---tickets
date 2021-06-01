@@ -155,6 +155,7 @@
     <ClInclude Include="doctest.h" />
     <ClInclude Include="Event.h" />
     <ClInclude Include="Hall.h" />
+    <ClInclude Include="InputHandler.h" />
     <ClInclude Include="Row.h" />
     <ClInclude Include="Seat.h" />
     <ClInclude Include="String.h" />

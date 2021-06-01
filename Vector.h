@@ -24,7 +24,7 @@ public:
 		vector = new T[capacity];
 	}
 	friend std::ostream& operator<<(std::ostream& out, const Vector<T>& current) {
-		out << current.getSize() << "\n";
+		out << current.getSize() << ": Size of the hall\n";
 		for (size_t i = 0; i < current.size; i++)
 		{
 			out << current.vector[i];

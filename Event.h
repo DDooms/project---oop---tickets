@@ -30,6 +30,6 @@ public:
 	void saveEvent(std::ostream& file);
 	void loadEvent(std::istream& file);
 
-	//friend std::ostream& operator<<(std::ostream& out, const Event& current);
+	friend std::ostream& operator<<(std::ostream& out, const Event& current);
 	friend std::istream& operator>>(std::istream& in, Event& current);
 };

@@ -22,7 +22,7 @@ public:
 	const char* getString() const;
 	size_t getSize() const;
 	size_t getCapacity() const;
-	void print();
+
 	void removeLast();
 
 	String operator+(String&);

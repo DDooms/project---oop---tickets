@@ -74,14 +74,6 @@ size_t String::getCapacity() const
 	return capacity;
 }
 
-void String::print()
-{
-	for (size_t i = 0; i < size; i++)
-	{
-		std::cout << string[i];
-	}
-	std::cout << "\n";
-}
 const char String::operator[](size_t index) const{
 	return string[index];
 }

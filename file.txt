@@ -1,0 +1,714 @@
+10
+EventName
+25.10.2021
+10: How many rows
+0: Row number
+0: Seat number
+0: Check if its booked
+: Note
+0: Ticket number
+0.0.0: Buying date
+
+0: Row number
+1: Seat number
+0: Check if its booked
+: Note
+0: Ticket number
+0.0.0: Buying date
+
+0: Row number
+2: Seat number
+0: Check if its booked
+: Note
+0: Ticket number
+0.0.0: Buying date
+
+0: Row number
+3: Seat number
+0: Check if its booked
+: Note
+0: Ticket number
+0.0.0: Buying date
+
+0: Row number
+4: Seat number
+0: Check if its booked
+: Note
+0: Ticket number
+0.0.0: Buying date
+
+0: Row number
+5: Seat number
+0: Check if its booked
+: Note
+0: Ticket number
+0.0.0: Buying date
+
+0: Row number
+6: Seat number
+0: Check if its booked
+: Note
+0: Ticket number
+0.0.0: Buying date
+
+0: Row number
+7: Seat number
+0: Check if its booked
+: Note
+0: Ticket number
+0.0.0: Buying date
+
+0: Row number
+8: Seat number
+0: Check if its booked
+: Note
+0: Ticket number
+0.0.0: Buying date
+
+0: Row number
+9: Seat number
+0: Check if its booked
+: Note
+0: Ticket number
+0.0.0: Buying date
+
+10: How many rows
+1: Row number
+0: Seat number
+0: Check if its booked
+: Note
+0: Ticket number
+0.0.0: Buying date
+
+1: Row number
+1: Seat number
+0: Check if its booked
+: Note
+0: Ticket number
+0.0.0: Buying date
+
+1: Row number
+2: Seat number
+0: Check if its booked
+: Note
+0: Ticket number
+0.0.0: Buying date
+
+1: Row number
+3: Seat number
+0: Check if its booked
+: Note
+0: Ticket number
+0.0.0: Buying date
+
+1: Row number
+4: Seat number
+0: Check if its booked
+: Note
+0: Ticket number
+0.0.0: Buying date
+
+1: Row number
+5: Seat number
+0: Check if its booked
+: Note
+0: Ticket number
+0.0.0: Buying date
+
+1: Row number
+6: Seat number
+0: Check if its booked
+: Note
+0: Ticket number
+0.0.0: Buying date
+
+1: Row number
+7: Seat number
+0: Check if its booked
+: Note
+0: Ticket number
+0.0.0: Buying date
+
+1: Row number
+8: Seat number
+0: Check if its booked
+: Note
+0: Ticket number
+0.0.0: Buying date
+
+1: Row number
+9: Seat number
+0: Check if its booked
+: Note
+0: Ticket number
+0.0.0: Buying date
+
+10: How many rows
+2: Row number
+0: Seat number
+0: Check if its booked
+: Note
+0: Ticket number
+0.0.0: Buying date
+
+2: Row number
+1: Seat number
+0: Check if its booked
+: Note
+0: Ticket number
+0.0.0: Buying date
+
+2: Row number
+2: Seat number
+0: Check if its booked
+: Note
+0: Ticket number
+0.0.0: Buying date
+
+2: Row number
+3: Seat number
+0: Check if its booked
+: Note
+0: Ticket number
+0.0.0: Buying date
+
+2: Row number
+4: Seat number
+0: Check if its booked
+: Note
+0: Ticket number
+0.0.0: Buying date
+
+2: Row number
+5: Seat number
+0: Check if its booked
+: Note
+0: Ticket number
+0.0.0: Buying date
+
+2: Row number
+6: Seat number
+0: Check if its booked
+: Note
+0: Ticket number
+0.0.0: Buying date
+
+2: Row number
+7: Seat number
+0: Check if its booked
+: Note
+0: Ticket number
+0.0.0: Buying date
+
+2: Row number
+8: Seat number
+0: Check if its booked
+: Note
+0: Ticket number
+0.0.0: Buying date
+
+2: Row number
+9: Seat number
+0: Check if its booked
+: Note
+0: Ticket number
+0.0.0: Buying date
+
+10: How many rows
+3: Row number
+0: Seat number
+0: Check if its booked
+: Note
+0: Ticket number
+0.0.0: Buying date
+
+3: Row number
+1: Seat number
+0: Check if its booked
+: Note
+0: Ticket number
+0.0.0: Buying date
+
+3: Row number
+2: Seat number
+0: Check if its booked
+: Note
+0: Ticket number
+0.0.0: Buying date
+
+3: Row number
+3: Seat number
+0: Check if its booked
+: Note
+0: Ticket number
+0.0.0: Buying date
+
+3: Row number
+4: Seat number
+0: Check if its booked
+: Note
+0: Ticket number
+0.0.0: Buying date
+
+3: Row number
+5: Seat number
+0: Check if its booked
+: Note
+0: Ticket number
+0.0.0: Buying date
+
+3: Row number
+6: Seat number
+0: Check if its booked
+: Note
+0: Ticket number
+0.0.0: Buying date
+
+3: Row number
+7: Seat number
+0: Check if its booked
+: Note
+0: Ticket number
+0.0.0: Buying date
+
+3: Row number
+8: Seat number
+0: Check if its booked
+: Note
+0: Ticket number
+0.0.0: Buying date
+
+3: Row number
+9: Seat number
+0: Check if its booked
+: Note
+0: Ticket number
+0.0.0: Buying date
+
+10: How many rows
+4: Row number
+0: Seat number
+0: Check if its booked
+: Note
+0: Ticket number
+0.0.0: Buying date
+
+4: Row number
+1: Seat number
+0: Check if its booked
+: Note
+0: Ticket number
+0.0.0: Buying date
+
+4: Row number
+2: Seat number
+0: Check if its booked
+: Note
+0: Ticket number
+0.0.0: Buying date
+
+4: Row number
+3: Seat number
+0: Check if its booked
+: Note
+0: Ticket number
+0.0.0: Buying date
+
+4: Row number
+4: Seat number
+0: Check if its booked
+: Note
+0: Ticket number
+0.0.0: Buying date
+
+4: Row number
+5: Seat number
+0: Check if its booked
+: Note
+0: Ticket number
+0.0.0: Buying date
+
+4: Row number
+6: Seat number
+0: Check if its booked
+: Note
+0: Ticket number
+0.0.0: Buying date
+
+4: Row number
+7: Seat number
+0: Check if its booked
+: Note
+0: Ticket number
+0.0.0: Buying date
+
+4: Row number
+8: Seat number
+0: Check if its booked
+: Note
+0: Ticket number
+0.0.0: Buying date
+
+4: Row number
+9: Seat number
+0: Check if its booked
+: Note
+0: Ticket number
+0.0.0: Buying date
+
+10: How many rows
+5: Row number
+0: Seat number
+0: Check if its booked
+: Note
+0: Ticket number
+0.0.0: Buying date
+
+5: Row number
+1: Seat number
+0: Check if its booked
+: Note
+0: Ticket number
+0.0.0: Buying date
+
+5: Row number
+2: Seat number
+0: Check if its booked
+: Note
+0: Ticket number
+0.0.0: Buying date
+
+5: Row number
+3: Seat number
+0: Check if its booked
+: Note
+0: Ticket number
+0.0.0: Buying date
+
+5: Row number
+4: Seat number
+0: Check if its booked
+: Note
+0: Ticket number
+0.0.0: Buying date
+
+5: Row number
+5: Seat number
+0: Check if its booked
+: Note
+0: Ticket number
+0.0.0: Buying date
+
+5: Row number
+6: Seat number
+0: Check if its booked
+: Note
+0: Ticket number
+0.0.0: Buying date
+
+5: Row number
+7: Seat number
+0: Check if its booked
+: Note
+0: Ticket number
+0.0.0: Buying date
+
+5: Row number
+8: Seat number
+0: Check if its booked
+: Note
+0: Ticket number
+0.0.0: Buying date
+
+5: Row number
+9: Seat number
+0: Check if its booked
+: Note
+0: Ticket number
+0.0.0: Buying date
+
+10: How many rows
+6: Row number
+0: Seat number
+0: Check if its booked
+: Note
+0: Ticket number
+0.0.0: Buying date
+
+6: Row number
+1: Seat number
+0: Check if its booked
+: Note
+0: Ticket number
+0.0.0: Buying date
+
+6: Row number
+2: Seat number
+0: Check if its booked
+: Note
+0: Ticket number
+0.0.0: Buying date
+
+6: Row number
+3: Seat number
+0: Check if its booked
+: Note
+0: Ticket number
+0.0.0: Buying date
+
+6: Row number
+4: Seat number
+0: Check if its booked
+: Note
+0: Ticket number
+0.0.0: Buying date
+
+6: Row number
+5: Seat number
+0: Check if its booked
+: Note
+0: Ticket number
+0.0.0: Buying date
+
+6: Row number
+6: Seat number
+0: Check if its booked
+: Note
+0: Ticket number
+0.0.0: Buying date
+
+6: Row number
+7: Seat number
+0: Check if its booked
+: Note
+0: Ticket number
+0.0.0: Buying date
+
+6: Row number
+8: Seat number
+0: Check if its booked
+: Note
+0: Ticket number
+0.0.0: Buying date
+
+6: Row number
+9: Seat number
+0: Check if its booked
+: Note
+0: Ticket number
+0.0.0: Buying date
+
+10: How many rows
+7: Row number
+0: Seat number
+0: Check if its booked
+: Note
+0: Ticket number
+0.0.0: Buying date
+
+7: Row number
+1: Seat number
+0: Check if its booked
+: Note
+0: Ticket number
+0.0.0: Buying date
+
+7: Row number
+2: Seat number
+0: Check if its booked
+: Note
+0: Ticket number
+0.0.0: Buying date
+
+7: Row number
+3: Seat number
+0: Check if its booked
+: Note
+0: Ticket number
+0.0.0: Buying date
+
+7: Row number
+4: Seat number
+0: Check if its booked
+: Note
+0: Ticket number
+0.0.0: Buying date
+
+7: Row number
+5: Seat number
+0: Check if its booked
+: Note
+0: Ticket number
+0.0.0: Buying date
+
+7: Row number
+6: Seat number
+0: Check if its booked
+: Note
+0: Ticket number
+0.0.0: Buying date
+
+7: Row number
+7: Seat number
+0: Check if its booked
+: Note
+0: Ticket number
+0.0.0: Buying date
+
+7: Row number
+8: Seat number
+0: Check if its booked
+: Note
+0: Ticket number
+0.0.0: Buying date
+
+7: Row number
+9: Seat number
+0: Check if its booked
+: Note
+0: Ticket number
+0.0.0: Buying date
+
+10: How many rows
+8: Row number
+0: Seat number
+0: Check if its booked
+: Note
+0: Ticket number
+0.0.0: Buying date
+
+8: Row number
+1: Seat number
+0: Check if its booked
+: Note
+0: Ticket number
+0.0.0: Buying date
+
+8: Row number
+2: Seat number
+0: Check if its booked
+: Note
+0: Ticket number
+0.0.0: Buying date
+
+8: Row number
+3: Seat number
+0: Check if its booked
+: Note
+0: Ticket number
+0.0.0: Buying date
+
+8: Row number
+4: Seat number
+0: Check if its booked
+: Note
+0: Ticket number
+0.0.0: Buying date
+
+8: Row number
+5: Seat number
+0: Check if its booked
+: Note
+0: Ticket number
+0.0.0: Buying date
+
+8: Row number
+6: Seat number
+0: Check if its booked
+: Note
+0: Ticket number
+0.0.0: Buying date
+
+8: Row number
+7: Seat number
+0: Check if its booked
+: Note
+0: Ticket number
+0.0.0: Buying date
+
+8: Row number
+8: Seat number
+0: Check if its booked
+: Note
+0: Ticket number
+0.0.0: Buying date
+
+8: Row number
+9: Seat number
+0: Check if its booked
+: Note
+0: Ticket number
+0.0.0: Buying date
+
+10: How many rows
+9: Row number
+0: Seat number
+0: Check if its booked
+: Note
+0: Ticket number
+0.0.0: Buying date
+
+9: Row number
+1: Seat number
+0: Check if its booked
+: Note
+0: Ticket number
+0.0.0: Buying date
+
+9: Row number
+2: Seat number
+0: Check if its booked
+: Note
+0: Ticket number
+0.0.0: Buying date
+
+9: Row number
+3: Seat number
+0: Check if its booked
+: Note
+0: Ticket number
+0.0.0: Buying date
+
+9: Row number
+4: Seat number
+0: Check if its booked
+: Note
+0: Ticket number
+0.0.0: Buying date
+
+9: Row number
+5: Seat number
+0: Check if its booked
+: Note
+0: Ticket number
+0.0.0: Buying date
+
+9: Row number
+6: Seat number
+0: Check if its booked
+: Note
+0: Ticket number
+0.0.0: Buying date
+
+9: Row number
+7: Seat number
+0: Check if its booked
+: Note
+0: Ticket number
+0.0.0: Buying date
+
+9: Row number
+8: Seat number
+0: Check if its booked
+: Note
+0: Ticket number
+0.0.0: Buying date
+
+9: Row number
+9: Seat number
+0: Check if its booked
+: Note
+0: Ticket number
+0.0.0: Buying date
+
+1

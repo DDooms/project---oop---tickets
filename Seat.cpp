@@ -69,12 +69,12 @@ size_t Seat::random() const
 
 std::ostream& operator<<(std::ostream& out, const Seat& current)
 {
-	out << current.rowNumber << "\n";
-	out << current.seatNumber << "\n";
-	out << current.booked << "\n";
-	out << current.note << "\n";
-	out << current.ticketNum << "\n";
-	out << current.buyingDate << "\n";
+	out << current.rowNumber << ": Row number\n";
+	out << current.seatNumber << ": Seat number\n";
+	out << current.booked << ": Check if its booked\n";
+	out << current.note << ": Note\n";
+	out << current.ticketNum << ": Ticket number\n";
+	out << current.buyingDate << ": Buying date\n";
 	return out;
 }
 

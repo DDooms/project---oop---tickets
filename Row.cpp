@@ -20,7 +20,7 @@ Seat& Row::operator[](size_t index) const {
 
 std::ostream& operator<<(std::ostream& out, const Row& current) {
 	size_t size = current.seats.getSize();
-	out << size << "\n";
+	out << size << ": How many rows\n";
 	for (size_t i = 0; i < size; i++)
 	{
 		out << current.seats[i];

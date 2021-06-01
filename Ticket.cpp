@@ -42,7 +42,6 @@ void Ticket::addEvent() {
 		events.PushBack(newEvent);
 		halls[hallNum].book(date);
 	}
-	run();
 }
 
 void Ticket::freeSeats() {
@@ -61,7 +60,6 @@ void Ticket::freeSeats() {
 	if (foundEvent != nullptr)
 		std::cout << foundEvent->getFreeSeats() << "\n";
 	else std::cout << "Event not found\n";
-	run();
 }
 
 void Ticket::book() {
@@ -89,7 +87,6 @@ void Ticket::book() {
 		else std::cout << "Seat not available\n";
 	}
 	else std::cout << "Event not found\n";
-	run();
 }
 
 void Ticket::unbook() {
@@ -114,7 +111,6 @@ void Ticket::unbook() {
 		else std::cout << "Seat not available\n";
 	}
 	else std::cout << "Event not found\n";
-	run();
 }
 
 void Ticket::buy() {
@@ -139,47 +135,49 @@ void Ticket::buy() {
 		else std::cout << "Seat not available\n";
 	}
 	else std::cout << "Event not found\n";
-	run();
 }
 
 void Ticket::bookings() {
+	size_t number;
 	size_t size = events.getSize();
+	if (size == 0)
+	{
+		std::cout << "No events booked\n";
+		return;
+	}
 	Date tempDate;
 	String tempName;
-	std::cout << "If you want to see all bookings, type 'a'. If you want to see a show by its name, press enter and type the name\n"
-		<< "If you want to see a show by the date, type 'b', then enter the date\n";
-	std::cout << "If you want to enter a name and a date, press space, then enter\n";
-	if (std::cin.peek() == 'a')
+	std::cout << "If you want to see all bookings, type 1. If you want to see a show by its name, type 3 and enter the name\n"
+		<< "If you want to see a show by the date, type 2, then enter the date\n";
+	std::cout << "If you want to enter a name and a date, type 4, then enter\n";
+	std::cin >> number;
+	if (number == 1)
 	{
 		for (size_t i = 0; i < size; ++i) {
 			std::cout << events[i].getName() << ", " << events[i].getDate() << ": "
 				<< events[i].getBookedButNotBoughtSeats() << std::endl;
 		}
 	}
-	else if (std::cin.peek() == '\n')
+	else if (number == 2)
 	{
-
-		if (std::cin.peek() == 'b')
-		{
-			std::cout << "Enter a date: ";
-			std::cin >> tempDate;
-			for (size_t i = 0; i < size; ++i) {
-				if (events[i].getDate() == tempDate)
-					std::cout << events[i].getDate() << ": " << events[i].getBookedButNotBoughtSeats() << std::endl;
-			}
-		}
-		else
-		{
-			std::cout << "Enter a name: ";
-			std::cin.ignore();
-			std::cin >> tempName;
-			for (size_t i = 0; i < size; ++i) {
-				if (events[i].getName() == tempName)
-					std::cout << events[i].getName() << ": " << events[i].getBookedButNotBoughtSeats() << std::endl;
-			}
+		std::cout << "Enter a date: ";
+		std::cin >> tempDate;
+		for (size_t i = 0; i < size; ++i) {
+			if (events[i].getDate() == tempDate)
+				std::cout << events[i].getDate() << ": " << events[i].getBookedButNotBoughtSeats() << std::endl;
 		}
 	}
-	else
+	else if (number == 3)
+	{
+		std::cout << "Enter a name: ";
+		std::cin.ignore();
+		std::cin >> tempName;
+		for (size_t i = 0; i < size; ++i) {
+			if (events[i].getName() == tempName)
+				std::cout << events[i].getName() << ": " << events[i].getBookedButNotBoughtSeats() << std::endl;
+		}
+	}
+	else if (number == 4)
 	{
 		std::cout << "Enter a date: ";
 		std::cin >> tempDate;
@@ -189,10 +187,10 @@ void Ticket::bookings() {
 
 		Event* foundEvent = findEvent(tempName, tempDate);
 		if (!(foundEvent == nullptr))
-			std::cout << foundEvent->getBookedButNotBoughtSeats();
+			std::cout << foundEvent->getBookedButNotBoughtSeats() << std::endl;
 		else std::cout << "Event not found\n";
 	}
-	run();
+	else std::cout << "Wrong input...\n"; return;
 }
 
 void Ticket::check() {
@@ -206,7 +204,6 @@ void Ticket::check() {
 			std::cout << "Valid ticket with seat: " << seatNum;
 		else std::cout << "Invalid ticket\n";
 	}
-	run();
 }
 
 void Ticket::report() {
@@ -237,43 +234,6 @@ void Ticket::report() {
 		{
 			std::cout << events[i].getName() << ", " << events[i].getDate() << ": "
 				<< events[i].getBoughtSeatsOnDateInterval(dateFrom, dateTo) << "\n";
-		}
-	}
-	run();
-}
-
-void Ticket::run() {
-	std::cout << "Please enter all dates in the format: DD-MM-YYYY" << std::endl;
-	String command;
-	std::cout << "Enter a command: ";
-	while (true) {
-		//probvay switch case
-		std::cin >> command;
-		command.tolower();
-
-		if (command == "addevent") {
-			addEvent();
-		}
-		else if (command == "freeseats") {
-			freeSeats();
-		}
-		else if (command == "book") {
-			book();
-		}
-		else if (command == "unbook") {
-			unbook();
-		}
-		else if (command == "buy") {
-			buy();
-		}
-		else if (command == "bookings") {
-			bookings();
-		}
-		else if (command == "check") {
-			check();
-		}
-		else if (command == "report") {
-			report();
 		}
 	}
 }
